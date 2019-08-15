@@ -164,7 +164,7 @@
 
 				info.update = function (props) {
 					
-					this._div.innerHTML = '<h5>Informasi [Provinsi]</h5>' +  (props ?
+					this._div.innerHTML = '<h5>Data Provinsi</h5>' +  (props ?
 						'<b>' + props.ADM1_EN + '</b><br />' + locationCount[props.ADM1_EN][0] + ' Titik Panas<br/>' + locationCount[props.ADM1_EN][1] + ' ada asap<br/>' + locationCount[props.ADM1_EN][2] + ' Kualitas Udara</br>' + locationCount[props.ADM1_EN][3] + '<br/>' + locationCount[props.ADM1_EN][4] + ' Personil</br>'
 						: 'Hover over a state');
 				};
@@ -217,7 +217,7 @@
 
 				function zoomToFeature(e) {
 					// map.fitBounds(e.target.getBounds());
-					let KABKOT = e.target.feature.properties.KABKOT;
+					let ADM1_EN = e.target.feature.properties.ADM1_EN;
 					let select = ADM1_EN.replace(' ','-');
 					$('#regionselect option').removeAttr('selected').filter('[value=' + select + ']').attr('selected', true);
 					redrawvis(ADM1_EN);
